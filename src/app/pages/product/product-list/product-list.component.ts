@@ -1,6 +1,6 @@
 import { environment } from './../../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
-import { ProductServiceService } from '../../../core/services/product.service';
+import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/modal/product';
 
 @Component({
@@ -11,7 +11,7 @@ import { Product } from '../../../core/modal/product';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductServiceService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.products = this.productService.getDataToLocal(environment.productsKey);

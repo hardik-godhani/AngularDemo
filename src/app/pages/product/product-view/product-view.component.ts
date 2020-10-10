@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/core/modal/product';
 
 @Component({
   selector: 'app-product-view',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
+  @Input() product: Product;
 
   constructor() { }
 

@@ -1,1 +1,29 @@
-<p>product-view works!</p>
+<div class="container">
+  <div class="row pt-5">
+    <h3>
+      View Product
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <img [src]="product?.image" loading="lazy">
+    </div>
+    <div class="col-4">
+      <div class="data">
+        Product Code : {{ product?.code }}
+      </div>
+      <div class="data">
+        Product Name : {{ product?.name }}
+      </div>
+      <div class="data">
+        HSN Code : {{ product?.hsnCode }}
+      </div>
+      <div class="data">
+        Price : {{ product?.price }}
+      </div>
+      <div class="data">
+        Description : {{ product?.desc }}
+      </div>
+    </div>
+  </div>
+</div>

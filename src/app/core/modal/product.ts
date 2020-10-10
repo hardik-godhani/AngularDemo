@@ -3,8 +3,8 @@ export class Product {
   name: string;
   code: string;
   image: string;
-  HsnCode: string;
-  Price: string;
+  hsnCode: string;
+  price: number;
   desc: string;
 
   constructor() {
