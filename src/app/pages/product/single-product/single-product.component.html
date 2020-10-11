@@ -1,2 +1,19 @@
-<p>single-product works!</p>
-{{ product?.name }}
+<!-- <p>single-product works!</p> -->
+<div class="p-3" style="max-height: 500px;">
+  <div class="">
+    <a [routerLink]="product?.id">
+      <img [src]="product.image" loading="lazy" height="300px" width="100%">
+    </a>
+  </div>
+  <div class="">
+    <div class="">
+      Code : {{ product?.code }}
+    </div>
+    <div class="">
+      Name : {{ product?.name }}
+    </div>
+  </div>
+  <div class="w-100">
+    <button class="btn btn-danger w-100" (click)="productDelete(product)">Delete</button>
+  </div>
+</div>

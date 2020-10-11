@@ -3,7 +3,12 @@
     <h3>Products</h3>
     <a routerLink="add" class="btn btn-primary">Add Product</a>
   </div>
-  <div class="row">
-    <app-single-product [product]="product" *ngFor="let product of products"></app-single-product>
+  <div class="row" *ngIf="products?.length > 0">
+    <span class="col-4" *ngFor="let product of products">
+      <app-single-product (refreshList)="getProducts()" class="col-4" [product]="product"></app-single-product>
+    </span>
+  </div>
+  <div class="row" *ngIf="products?.length == 0">
+    No Products availabe.
   </div>
 </div>

@@ -6,28 +6,28 @@
   </div>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="row mt-4">
         <div class="form-group col-6">
-           <label for="username">Name</label>
+           <label for="username">Name *</label>
            <input type="text" class="form-control"
             id="name" formControlName = "name">
-           <span class="help-block" *ngIf="!val.valid&&val.touched">
-             <span *ngIf = "val.errors['required']">field is required</span>
+           <span class="help-block" *ngIf="val.name.dirty && val.name.errors">
+             <span *ngIf="val.name.errors.required">field is required</span>
            </span>
         </div>
         <div class="form-group col-3">
-          <label for="price">Price</label>
+          <label for="price">Price *</label>
           <input type="number" class="form-control"
            id="price" formControlName = "price">
-          <span class="help-block" *ngIf="!val.valid&&val.touched">
-            <span *ngIf = "val.errors['required']">field is required</span>
+           <span class="help-block" *ngIf="val.price.dirty && val.price.errors">
+            <span *ngIf="val.price.errors.required">field is required</span>
           </span>
        </div>
         <div class="form-group col-3">
-           <label for="code">Code</label>
-           <input type="text" class="form-control"
+           <label for="code">Code *</label>
+           <input type="text" class="form-control" disabled
             id="code" formControlName = "code">
-           <span class="help-block" *ngIf="!val.valid&&val.touched">
-             <span *ngIf = "val.errors['required']">field is required</span>
-           </span>
+            <span class="help-block" *ngIf="val.code.dirty && val.code.errors">
+              <span *ngIf="val.code.errors.required">field is required</span>
+            </span>
         </div>
         <div class="form-group col-6">
            <label for="image">ImageLink</label>

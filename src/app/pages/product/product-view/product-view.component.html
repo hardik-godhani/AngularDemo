@@ -6,23 +6,23 @@
   </div>
   <div class="row">
     <div class="col-8">
-      <img [src]="product?.image" loading="lazy">
+      <img [src]="product?.image" loading="lazy" width="100%">
     </div>
     <div class="col-4">
       <div class="data">
-        Product Code : {{ product?.code }}
+        Product Code : {{ product?.code || 'N/A' }}
       </div>
       <div class="data">
-        Product Name : {{ product?.name }}
+        Product Name : {{ product?.name || 'N/A' }}
       </div>
       <div class="data">
-        HSN Code : {{ product?.hsnCode }}
+        HSN Code : {{ product?.hsnCode || 'N/A' }}
       </div>
       <div class="data">
-        Price : {{ product?.price }}
+        Price : {{ product?.price || 'N/A' }}
       </div>
       <div class="data">
-        Description : {{ product?.desc }}
+        Description : {{ product?.desc || 'N/A' }}
       </div>
     </div>
   </div>

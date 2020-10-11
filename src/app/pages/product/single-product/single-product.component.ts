@@ -1,5 +1,6 @@
+import { ProductService } from './../../../core/services/product.service';
 import { Product } from './../../../core/modal/product';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-single-product',
@@ -8,10 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SingleProductComponent implements OnInit {
   @Input() product: Product;
+  @Output() refreshList = new EventEmitter();
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
 
+  productDelete(data) {
+    this.productService.deleteProduct(data);
+    this.refreshList.next();
+  }
 }

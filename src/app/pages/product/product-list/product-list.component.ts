@@ -14,8 +14,11 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts() {
     this.products = this.productService.getDataToLocal(environment.productsKey);
-    // debugger;
   }
 
 }
